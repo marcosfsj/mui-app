@@ -1,7 +1,7 @@
-import { createMuiTheme } from "@material-ui/core";
-import { deepPurple, amber } from "@material-ui/core/colors";
+import { createTheme } from "@mui/material";
+import { deepPurple, amber, red } from "@mui/material/colors";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: deepPurple[500],
@@ -11,29 +11,35 @@ const theme = createMuiTheme({
       contrastText: deepPurple[900],
     },
   },
-});
-
-theme.props = {
-  MuiButton: {
-    disableElevation: true,
-  },
-};
-theme.overrides = {
-  MuiButton: {
-    root: {
-      borderRadius: 0,
-      textTransform: "none",
-    },
-    containedPrimary: {
-      "&:hover": {
-        backgroundColor: amber[500],
-        color: deepPurple[900],
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableRipple: true,
+        color: "secondary",
+        variant: "contained",
+        disableElevation: true,
+      },
+      styleOverrides: {
+        root: {
+          fontSize: "20px",
+        },
       },
     },
-    containedSecondary: {
-      fontWeight: 700,
+    MuiButtonBase: {
+      defaultProps: {},
+      styleOverrides: {},
+    },
+    MuiInputLabel: {
+      defaultProps: {},
+      styleOverrides: {},
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: "filled",
+      },
+      styleOverrides: {},
     },
   },
-};
+});
 
 export default theme;
