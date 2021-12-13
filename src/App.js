@@ -4,6 +4,7 @@ import theme from "./theme";
 import { Button, TextField } from "@mui/material";
 
 const App = () => {
+  console.log(theme);
   return (
     <ThemeProvider theme={theme}>
       <Button>Button1</Button>

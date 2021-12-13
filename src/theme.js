@@ -1,8 +1,11 @@
 import { createTheme } from "@mui/material";
-import { deepPurple, amber, red } from "@mui/material/colors";
+import { deepPurple, amber } from "@mui/material/colors";
+
+const customRed = "#D30F41";
 
 const theme = createTheme({
   palette: {
+    common: { red: customRed },
     primary: {
       main: deepPurple[500],
     },
